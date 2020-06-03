@@ -22,7 +22,7 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - name: Installing Nodejs
-    - uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v2-beta
       with:
         node-version: 12 
     
@@ -34,5 +34,5 @@ jobs:
     - name: install surge
       run: npm install --global surge
     - name: deploy to surge
-      run: surge ./ simplereact.surge.sh --token{{ secrect.TOKEN_REACT }}
+      run: surge ./ simplereact.surge.sh --token ${{ secrect.TOKEN_REACT }}
     
